@@ -1,0 +1,12 @@
+---
+- name: Manage /etc/hosts
+  hosts: 
+  become: true
+  tasks:
+    - name: Add hostname to /etc/hosts
+      ansible.builtin.blockinfile:
+        path: /etc/hosts
+        block: |
+          {{ hostvars[item].inventory_hostname }} {{ hostvars[item].ansible_host }}
+        marker: "# {mark} ANSIBLE MANAGED BLOCK {{ hostvars[item].inventory_hostname }}"
+      loop:  "{{ groups['home'] }}"
