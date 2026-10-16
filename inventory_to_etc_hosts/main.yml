@@ -9,4 +9,4 @@
         block: |
           {{ hostvars[item].inventory_hostname }} {{ hostvars[item].ansible_host }}
         marker: "# {mark} ANSIBLE MANAGED BLOCK {{ hostvars[item].inventory_hostname }}"
-      loop:  "{{ groups['home'] }}"
+      loop:  "{{ groups[''] }}"
