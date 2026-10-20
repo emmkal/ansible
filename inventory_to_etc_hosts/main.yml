@@ -7,6 +7,6 @@
       ansible.builtin.blockinfile:
         path: /etc/hosts
         block: |
-          {{ hostvars[item].inventory_hostname }} {{ hostvars[item].ansible_host }}
+          {{ hostvars[item].ansible_host }} {{ hostvars[item].inventory_hostname }}
         marker: "# {mark} ANSIBLE MANAGED BLOCK {{ hostvars[item].inventory_hostname }}"
       loop:  "{{ groups[''] }}"
