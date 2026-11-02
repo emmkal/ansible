@@ -10,3 +10,4 @@
           {{ hostvars[item].ansible_host }} {{ hostvars[item].inventory_hostname }}
         marker: "# {mark} ANSIBLE MANAGED BLOCK {{ hostvars[item].inventory_hostname }}"
       loop:  "{{ groups[''] }}"
+# TESTING GIT BRANCH
